@@ -17,6 +17,12 @@ function showPage(id) {
 
   // animate next in
   next.classList.add("active");
+
+  // Scroll to top hehe
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 // top nav
