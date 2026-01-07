@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Eli Roberts</title>
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -11,13 +11,18 @@
 <body>
 
 <header class="topbar">
-  <h1 class="logo">My Portfolio</h1>
+  <h1 class="logo">Eli Roberts</h1>
 
   <nav class="nav-links">
-    <button data-target="home">Home</button>
-    <button data-target="games">Games</button>
-    <button data-target="video">Video</button>
-    <button data-target="music">Music</button>
+    <button data-target="home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M3 10L12 3L21 10V21H14V14H10V21H3V10Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+    </button>
   </nav>
 </header>
 
@@ -48,11 +53,14 @@
   <!-- GAMES -->
   <section id="games" class="page">
     <h2>Game Development</h2>
-    <p>Write a short blurb about your experience and projects.</p>
+    <p>I have created games</p>
 
     <div class="content-box">
-      <img src="game-preview.gif" alt="Game preview" />
-      <p>Describe the tools, engines, and skills you used.</p>
+        <img src="games.png" alt="Game preview" />
+        <video width="640" height="380" controls autoplay muted playsinline loop>
+            <source src="waddlesclip.mp4" type="video/mp4">
+        </video>
+        <p>Godot, Unity</p>
     </div>
   </section>
 

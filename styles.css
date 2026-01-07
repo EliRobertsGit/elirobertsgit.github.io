@@ -3,23 +3,41 @@
 body {
   margin: 0;
   background: radial-gradient(ellipse at top, #0b0f18, #05060a);
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* locks it in place */
+  background-size: 120% 120%;     /* smooths the gradient */
   color: #fff;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
+
 /* Header */
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;   /* centers your buttons/icon */
   align-items: center;
+
   padding: 1.2rem 2rem;
+  background: rgba(5, 8, 18, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+
+nav {
+  display: flex;
+  gap: 1.2rem;
 }
 
 .nav-links button {
   background: transparent;
   border: none;
   color: #9ad5ff;
-  margin-left: 0.75rem;
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.25s;
@@ -30,14 +48,18 @@ body {
   text-shadow: 0 0 10px #9ad5ff;
 }
 
-/* Pages + transitions */
+main {
+  position: relative;
+}
+
+/* Pages now overlap instead of stacking */
 .page {
+  position: absolute;
+  inset: 150px 0 0 0;   /* sits just below the header */
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity .45s ease, transform .45s ease;
-  padding: 2rem;
-  min-height: calc(100vh - 90px);
 }
 
 .page.active {
@@ -45,6 +67,7 @@ body {
   pointer-events: auto;
   transform: translateY(0);
 }
+
 
 .page.leaving {
   opacity: 0;
@@ -73,8 +96,7 @@ body {
   filter: saturate(0.6) brightness(0.85);
 }
 
-/* Give each panel a vibe — replace images if you want */
-.panel:nth-child(1) { background-image: url("games.jpg"); }
+.panel:nth-child(1) { background-image: url("games.png"); }
 .panel:nth-child(2) { background-image: url("video.jpg"); }
 .panel:nth-child(3) { background-image: url("music.jpg"); }
 
@@ -99,7 +121,7 @@ body {
 /* Content sections */
 .content-box {
   margin-top: 1.5rem;
-  background: rgba(255,255,255,0.05);
+  background: rgba(0, 0, 0, 0.35);  /* darker, blends in */
   padding: 1.5rem;
   border-radius: 16px;
   backdrop-filter: blur(6px);
@@ -120,4 +142,12 @@ audio {
 img {
   max-width: 100%;
   border-radius: 14px;
+}
+
+.page > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
