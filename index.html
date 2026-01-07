@@ -1,25 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<header>
-  <h1>My Portfolio</h1>
-  <nav>
-    <a href="games.html">Game Development</a>
-    <a href="video.html">Video Editing</a>
-    <a href="music.html">Music</a>
+<header class="topbar">
+  <h1 class="logo">My Portfolio</h1>
+
+  <nav class="nav-links">
+    <button data-target="home">Home</button>
+    <button data-target="games">Games</button>
+    <button data-target="video">Video</button>
+    <button data-target="music">Music</button>
   </nav>
 </header>
 
-<section class="hero">
-  <h2>Hi — I make games, videos, and music.</h2>
-  <p>Explore my work through the tabs above.</p>
-</section>
+<main>
+
+  <!-- HOME (panels) -->
+  <section id="home" class="page active">
+    <div class="panel-grid">
+
+      <div class="panel" data-target="games">
+        <div class="overlay"></div>
+        <h2>Game Development</h2>
+      </div>
+
+      <div class="panel" data-target="video">
+        <div class="overlay"></div>
+        <h2>Video Editing</h2>
+      </div>
+
+      <div class="panel" data-target="music">
+        <div class="overlay"></div>
+        <h2>Music</h2>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section id="games" class="page">
+    <h2>Game Development</h2>
+    <p>Write a short blurb about your experience and projects.</p>
+
+    <div class="content-box">
+      <img src="game-preview.gif" alt="Game preview" />
+      <p>Describe the tools, engines, and skills you used.</p>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video" class="page">
+    <h2>Video Editing</h2>
+
+    <div class="content-box">
+      <!-- Replace VIDEO_ID -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID?autoplay=0&mute=0&loop=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music" class="page">
+    <h2>Music</h2>
+
+    <div class="content-box">
+      <audio controls>
+        <source src="song.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </section>
+
+</main>
 
 <script src="script.js"></script>
 </body>
