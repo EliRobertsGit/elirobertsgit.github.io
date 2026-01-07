@@ -11,7 +11,7 @@
 <body>
 
 <header class="topbar">
-  <h1 class="logo">Eli Roberts</h1>
+  <h1 class="logo" data-target="home">Eli Roberts</h1>
 
   <nav class="nav-links">
     <button data-target="home">
@@ -55,26 +55,56 @@
     <h2>Game Development</h2>
     <p>I have created games</p>
 
-    <div class="content-box">
+    <div class="content-box game-item">
+
+      <div class="media">
         <img src="games.png" alt="Game preview" />
-        <video width="640" height="380" controls autoplay muted playsinline loop>
-            <source src="waddlesclip.mp4" type="video/mp4">
+
+        <video width="640" height="380" autoplay muted playsinline loop>
+          <source src="waddlesclip.mp4" type="video/mp4">
         </video>
-        <p>Godot, Unity</p>
+      </div>
+
+      <div class="game-info">
+        <h3>A Worthwhile Waddle</h3>
+
+        <a href="https://cabob.itch.io/waddles" target="_blank">Available on itch</a>
+
+        <p>"Go on an adventure across the North Pole to find the rumored mystically magical
+           magnificent wings which will grant Waddles' one true wish, the 
+           power of flight. With many challenging obstacles, a colourful cast and plenty 
+           of cheese, this penguintastic experience is one that will surely change your life."</p>
+
+        <p>platformer, 2D, Godot, narrative-driven with animations</p>
+      </div>
+
     </div>
+
   </section>
 
   <!-- VIDEO -->
   <section id="video" class="page">
-    <h2>Video Editing</h2>
+    <h2>Down The Ant Hill - Short Form Editor</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <video autoplay loop muted playsinline>
+          <source src="ant1.mp4" type="video/mp4">
+        </video>
+      </div>
 
-    <div class="content-box">
-      <!-- Replace VIDEO_ID -->
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID?autoplay=0&mute=0&loop=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-      ></iframe>
+      <div class="video-card">
+        <video autoplay loop muted playsinline>
+          <source src="ant2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card">
+        <video autoplay loop muted playsinline>
+          <source src="ant3.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- add more by copying -->
     </div>
   </section>
 
@@ -82,11 +112,76 @@
   <section id="music" class="page">
     <h2>Music</h2>
 
-    <div class="content-box">
-      <audio controls>
-        <source src="song.mp3" type="audio/mpeg" />
-      </audio>
+    <div class="music-grid">
+
+      <div class="music-card" data-audio="song1.mp3">
+        <img class="cover" src="music.jpg" alt="Album cover">
+        <h4>Wondrous</h4>
+        <p>Personal Album</p>
+
+        <div class="controls">
+          <button class="play-btn">
+            ▶
+          </button>
+
+          <div class="progress">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <audio src="someGreat.mp3"></audio>
+      </div>
+
+
+      <div class="music-card" data-audio="song2.mp3">
+        <img class="cover" src="waddlesalbum.jpg" alt="Album cover">
+        <h4>A Worthwhile Waddle</h4>
+        <p>Original Soundtrack</p>
+
+        <div class="controls">
+          <button class="play-btn">▶</button>
+          <div class="progress">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <audio src="worthwhile.mp3"></audio>
+      </div>
+
+
+      <div class="music-card" data-audio="song3.mp3">
+        <img class="cover" src="ocalbum.jpg" alt="Album cover">
+        <h4>More of Me</h4>
+        <p>Original Soundtrack</p>
+
+        <div class="controls">
+          <button class="play-btn">▶</button>
+          <div class="progress">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <audio src="ocost.mp3"></audio>
+      </div>
+
     </div>
+
+    <div class="spotify-section">
+      <h3>Listen on Spotify</h3>
+
+      <iframe
+        data-testid="embed-iframe" 
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/artist/55AdQ6hswqV1acdZhDWT95?utm_source=generator"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
   </section>
 
 </main>

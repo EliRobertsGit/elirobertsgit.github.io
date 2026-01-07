@@ -29,3 +29,46 @@ document.querySelectorAll("[data-target]").forEach(el => {
 
 // default state
 showPage("home");
+
+const players = document.querySelectorAll(".music-card");
+
+let currentlyPlaying = null;
+
+players.forEach(card => {
+  const audio = card.querySelector("audio");
+  const playBtn = card.querySelector(".play-btn");
+  const bar = card.querySelector(".progress");
+  const fill = card.querySelector(".progress-fill");
+
+  playBtn.addEventListener("click", () => {
+
+    // stop any other song
+    if (currentlyPlaying && currentlyPlaying !== audio) {
+      currentlyPlaying.pause();
+      currentlyPlaying.parentElement
+        .querySelector(".play-btn").textContent = "▶";
+    }
+
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "⏸";
+      currentlyPlaying = audio;
+    } else {
+      audio.pause();
+      playBtn.textContent = "▶";
+    }
+  });
+
+  // update progress bar
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    fill.style.width = `${percent}%`;
+  });
+
+  // click to seek
+  bar.addEventListener("click", e => {
+    const rect = bar.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pos * audio.duration;
+  });
+});
