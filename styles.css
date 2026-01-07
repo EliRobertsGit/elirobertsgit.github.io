@@ -329,3 +329,49 @@ video::-webkit-media-controls {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 900px) {
+  .panel-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-grid {
+    grid-template-columns: 1fr; /* stack vertically on phones */
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .game-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .media {
+    max-width: 100%; /* fills screen width */
+  }
+
+  .game-info {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .topbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .music-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .video-card video { aspect-ratio: 9 / 16; } /* same for now, but could adjust to 3/4 if needed */
+}
